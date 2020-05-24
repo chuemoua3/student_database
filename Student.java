@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Student{
 
-    private String firstName, lastName, courses, studentID;
+    private String firstName, lastName, courses = "", studentID;
     private int tuitionBalance = 0, gradeYear;
     private static int costOfCourse = 600;
     private static int id = 1000;
@@ -39,7 +39,7 @@ public class Student{
     public void enroll(){
         //get inside a loop, user hits 0
         do{
-            System.out.print("Enter course to enroll (Q or q to quit): ");
+            System.out.print("Enter course to enroll (Q to quit): ");
             Scanner in = new Scanner(System.in);
             String course = in.nextLine();
             if(!course.equals("Q")){
@@ -74,8 +74,10 @@ public class Student{
 
 
     //show status
-    public String toString(){
+    public String showInfo(){
         return "Name: " + firstName + " " + lastName + 
+        "\nGrade Level: " + gradeYear +
+        "\nStudent ID: " + studentID +
         "\nCourses Enrolled: " + courses + 
         "\nBalance: $" + tuitionBalance;
     }
